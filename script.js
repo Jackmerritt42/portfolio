@@ -23,27 +23,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Skill bar animation using IntersectionObserver
-    const skillLevels = document.querySelectorAll('.skill-level');
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const skill = entry.target;
-                const width = skill.style.width;
-                skill.style.width = '0';
-                setTimeout(() => {
-                    skill.style.width = width;
-                }, 200);
-                observer.unobserve(skill); // Stop observing after animation
-            }
-        });
-    }, { threshold: 0.5 });
-
-    skillLevels.forEach(skill => {
-        observer.observe(skill);
-    });
-    
     // Form submission handler
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
