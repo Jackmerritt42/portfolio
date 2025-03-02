@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Jack Merritt</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">Jack Merritt</a>
+                <ul class="nav-links">
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#skills">Skills</a></li>
+                    <li><a href="index.html#featured-projects">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="projects-hero">
+        <div class="container">
+            <h1>My Projects</h1>
+            <p>A collection of my cybersecurity and development work</p>
+        </div>
+    </section>
+    
+    <section class="all-projects">
+        <div class="container">
+            <div class="section-header">
+                <h2>Project Portfolio</h2>
+            </div>
+            
+            <!-- Encrypted Chat Application (Detailed) -->
+            <div id="encrypted-chat" class="project-detailed">
+                <h3>Encrypted Chat Application</h3>
+                <span class="project-date">January 2025 - Present</span>
+                
+                <div class="project-meta">
+                    <div class="meta-item">
+                        <i class="fas fa-code"></i>
+                        <span>Python, Tkinter, Cryptography</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-layer-group"></i>
+                        <span>Full-Stack Development</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>End-to-End Encryption</span>
+                    </div>
+                </div>
+                
+                <div class="project-section">
+                    <h4>Project Overview</h4>
+                    <p>A secure, real-time messaging application that prioritizes user privacy through strong encryption protocols. The application implements both symmetric (AES) and asymmetric (RSA) encryption to provide end-to-end encrypted communication between users.</p>
+                </div>
+                
+                <div class="project-section">
+                    <h4>Key Features</h4>
+                    <ul>
+                        <li>End-to-end encryption using hybrid RSA/AES encryption scheme</li>
+                        <li>Secure key exchange protocol with Perfect Forward Secrecy</li>
+                        <li>Real-time message delivery with socket programming</li>
+                        <li>User-friendly GUI built with Tkinter</li>
+                        <li>Encrypted file sharing capabilities</li>
+                        <li>Message authentication to prevent tampering</li>
+                        <li>Local encrypted message history</li>
+                    </ul>
+                </div>
+                
+                <div class="project-section">
+                    <h4>Technical Implementation</h4>
+                    <p>The application uses a client-server architecture powered by Python's socket library for real-time communication. For security, RSA keys (2048-bit) are used to exchange ephemeral AES-256 session keys, which are then used to encrypt the actual message content. Each message includes a HMAC signature to verify authenticity.</p>
+                    <p>The GUI was designed with usability in mind while maintaining security best practices. All cryptographic operations utilize the Python cryptography library to ensure standards-compliant implementation of encryption algorithms.</p>
+                </div>
+                
+                <div class="project-section">
+                    <h4>Challenges & Solutions</h4>
+                    <p>One of the main challenges was balancing strong security with user experience. By implementing a hybrid encryption approach, the application maintains the security benefits of asymmetric encryption while achieving the performance benefits of symmetric encryption.</p>
+                    <p>Another challenge was ensuring secure key exchange. This was solved by implementing ephemeral key pairs that are rotated regularly, providing perfect forward secrecy for all conversations.</p>
+                </div>
+                
+                <div class="project-links">
+                    <a href="#" class="project-link"><i class="fab fa-github"></i> View Repository</a>
+                    <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
+                </div>
+            </div>
+            
+            <!-- Quantum-Resistant Tool (Detailed) -->
+            <div id="quantum-resistant" class="project-detailed">
+                <h3>Quantum-Resistant Encryption Tool</h3>
+                <span class="project-date">December 2024 - Present</span>
+                
+                <div class="project-meta">
+                    <div class="meta-item">
+                        <i class="fas fa-code"></i>
+                        <span>Python, IonQ API</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-microchip"></i>
+                        <span>Quantum Computing</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-lock"></i>
+                        <span>Post-Quantum Cryptography</span>
+                    </div>
+                </div>
+                
+                <div class="project-section">
+                    <h4>Project Overview</h4>
+                    <p>A forward-looking encryption tool built to be resistant to attacks from quantum computers. This project explores post-quantum cryptographic algorithms and implements the BB84 quantum key distribution protocol using IonQ's quantum hardware simulator.</p>
+                </div>
+                
+                <div class="project-section">
+                    <h4>Key Features</h4>
+                    <ul>
+                        <li>Implementation of BB84 quantum key distribution protocol</li>
+                        <li>Integration with IonQ's quantum hardware simulator</li>
+                        <li>Support for lattice-based encryption algorithms</li>
+                        <li>Command-line interface with Python</li>
+                        <li>Benchmarking tools to compare with classical encryption methods</li>
+                        <li>Visualization of quantum state distribution</li>
+                    </ul>
+                </div>
+                
+                <div class="project-section">
+                    <h4>Technical Implementation</h4>
+                    <p>The tool was built using Python and interfaces with IonQ's quantum computing platform to simulate quantum key distribution. The BB84 protocol involves preparing qubits in different bases and measuring them to establish a shared secret key that can be verified to detect eavesdropping.</p>
+                    <p>For post-quantum encryption, I implemented NTRU (N-th degree truncated polynomial ring units), a lattice-based cryptographic algorithm believed to be resistant to attacks from quantum computers using Shor's algorithm.</p>
+                </div>
+                
+                <div class="project-section">
+                    <h4>Challenges & Solutions</h4>
+                    <p>The primary challenge was working with quantum simulation within classical computing constraints. By utilizing IonQ's efficient simulators, I was able to model quantum key distribution effectively.</p>
+                    <p>Another challenge was implementing lattice-based cryptography efficiently, as these algorithms tend to have larger key sizes and computational overhead compared to current public-key methods. This was addressed through careful optimization and benchmarking.</p>
+                </div>
+                
+                <div class="project-links">
+                    <a href="#" class="project-link"><i class="fab fa-github"></i> View Repository</a>
+                    <a href="#" class="project-link"><i class="fas fa-book"></i> Documentation</a>
+                </div>
+            </div>
+            
+            <!-- Shamir Secret Sharing (Detailed) -->
+            <div id="shamir-secret" class="project-detailed">
+                <h3>Shamir Secret Sharing & Distributed Key Generation</h3>
+                <span class="project-date">February 2025 - Present</span>
+                
+                <div class="project-meta">
+                    <div class="meta-item">
+                        <i class="fas fa-code"></i>
+                        <span>Python, Matplotlib</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-key"></i>
+                        <span>Threshold Cryptography</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Data Visualization</span>
+                    </div>
+                </div>
+                
+                <div class="project-section">
+                    <h4>Project Overview</h4>
+                    <p>A cryptographic system that implements Shamir's Secret Sharing (SSS) and Distributed Key Generation (DKG) protocols, allowing sensitive information to be split among multiple parties such that only a threshold number of participants can reconstruct the original secret.</p>
+                </div>
+                
+                <div class="project-section">
+                    <h4>Key Features</h4>
+                    <ul>
+                        <li>Implementation of Shamir's Secret Sharing with configurable thresholds</li>
+                        <li>Distributed Key Generation without a trusted dealer</li>
+                        <li>Visual representation of polynomial interpolation</li>
+                        <li>Support for various secret types (numbers, text, binary data)</li>
+                        <li>Validation and verification mechanisms</li>
+                        <li>Performance benchmarking for different threshold configurations</li>
+                    </ul>
+                </div>
+                
+                <div class="project-section">
+                    <h4>Technical Implementation</h4>
+                    <p>The implementation uses finite field arithmetic to create polynomials that encode the secret as the constant term. For a (k,n) threshold scheme, at least k shares out of n total shares are required to reconstruct the secret using Lagrange interpolation.</p>
+                    <p>For Distributed Key Generation, the project implements a protocol where each participant generates a polynomial, distributes shares to other participants, and combines received shares to form their final key share, all without requiring a central trusted party.</p>
+                </div>
+                
+                <div class="project-section">
+                    <h4>Visualizations</h4>
+                    <p>The project includes matplotlib visualizations that demonstrate:
+                    <ul>
+                        <li>The original polynomial in the finite field</li>
+                        <li>How different shares correspond to points on the polynomial</li>
+                        <li>The process of polynomial reconstruction from shares</li>
+                        <li>Verification that reconstruction works with k shares but fails with fewer</li>
+                    </ul>
+                    </p>
+                </div>
+                
+                <div class="project-links">
+                    <a href="#" class="project-link"><i class="fab fa-github"></i> View Repository</a>
+                    <a href="#" class="project-link"><i class="fas fa-desktop"></i> Interactive Demo</a>
+                </div>
+            </div>
+            
+            <!-- Blockchain Voting System (Detailed) -->
+            <div id="blockchain-voting" class="project-detailed">
+                <h3>Blockchain-Based Voting System</h3>
+                <span class="project-date">September 2024 - Present</span>
+                
+                <div class="project-meta">
+                    <div class="meta-item">
+                        <i class="fas fa-code"></i>
+                        <span>Solidity, JavaScript, MySQL</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-link"></i>
+                        <span>Blockchain</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-vote-yea"></i>
+                        <span>Secure Voting</span>
+                    </div>
+                </div>
+                
+                <div class="project-section">
+                    <h4>Project Overview</h4>
+                    <p>A secure, transparent, and tamper-proof voting system built on Ethereum blockchain technology. The system ensures that votes cannot be altered once cast and provides a verifiable record of all voting activity while maintaining voter privacy.</p>
+                </div>
+                
+                <div class="project-section">
+                    <h4>Key Features</h4>
+                    <ul>
+                        <li>Ethereum smart contracts for vote recording and tallying</li>
+                        <li>Secure voter authentication and registration</li>
+                        <li>Prevention of double-voting through blockchain verification</li>
+                        <li>Anonymous voting with cryptographic techniques</li>
+                        <li>Real-time vote counting and results dashboard</li>
+                        <li>Audit trail for election officials</li>
+                        <li>Cross-platform web interface for voters</li>
+                    </ul>
+                </div>
+                
+                <div class="project-section">
+                    <h4>Technical Implementation</h4>
+                    <p>The system uses Solidity smart contracts deployed on an Ethereum test network to handle the voting logic. MySQL database handles user registration and authentication, while keeping sensitive user data off the blockchain for privacy.</p>
+                    <p>The front-end is built with HTML, CSS, and JavaScript, with Web3.js integration to communicate with the Ethereum blockchain. MetaMask is used to handle transaction signing and user wallet management.</p>
+                </div>
+                
+                <div class="project-section">
+                    <h4>Security Measures</h4>
+                    <p>To ensure the integrity of the voting process, the system implements:</p>
+                    <ul>
+                        <li>Zero-knowledge proofs to verify voter eligibility without revealing identity</li>
+                        <li>Commit-reveal scheme to prevent last-minute strategic voting</li>
+                        <li>Rate-limiting to defend against DoS attacks</li>
+                        <li>Encrypted storage of voter information in the off-chain database</li>
+                    </ul>
+                </div>
+                
+                <div class="project-links">
+                    <a href="#" class="project-link"><i class="fab fa-github"></i> View Repository</a>
+                    <a href="#" class="project-link"><i class="fas fa-play-circle"></i> Video Demo</a>
+                </div>
+            </div>
+            
+            <!-- Additional Projects can be added here -->
+            <div id="network-security-scanner" class="project-detailed">
+                <h3>Network Security Scanner</h3>
+                <span class="project-date">November 2024 - Present</span>
+                
+                <div class="project-meta">
+                    <div class="meta-item">
+                        <i class="fas fa-code"></i>
+                        <span>Python, Scapy</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-network-wired"></i>
+                        <span>Network Security</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-search"></i>
+                        <span>Vulnerability Assessment</span>
+                    </div>
+                </div>
+                
+                <div class="project-section">
+                    <h4>Project Overview</h4>
+                    <p>A comprehensive network security assessment tool that combines port scanning, vulnerability detection, and network mapping capabilities into a single interface. This tool helps identify potential security weaknesses in network infrastructure.</p>
+                </div>
+                
+                <div class="project-section">
+                    <h4>Key Features</h4>
+                    <ul>
+                        <li>Multi-threaded port scanning with customizable parameters</li>
+                        <li>OS fingerprinting and service detection</li>
+                        <li>Vulnerability detection based on service versions</li>
+                        <li>Network topology mapping</li>
+                        <li>Detailed reporting with mitigation recommendations</li>
+                        <li>Low-bandwidth mode for sensitive networks</li>
+                    </ul>
+                </div>
+                
+                <div class="project-section">
+                    <h4>Technical Implementation</h4>
+                    <p>Built in Python using Scapy for packet manipulation and network interactions. The scanner implements custom TCP/UDP scanning techniques including SYN stealth, FIN, XMAS, and NULL scans with timeout and retry mechanisms for accuracy.</p>
+                    <p>The vulnerability detection module cross-references detected service versions against a local database of known CVEs, updated regularly from public vulnerability databases.</p>
+                </div>
+                
+                <div class="project-links">
+                    <a href="#" class="project-link"><i class="fab fa-github"></i> View Repository</a>
+                    <a href="#" class="project-link"><i class="fas fa-file-alt"></i> Documentation</a>
+                </div>
+            </div>
+            
+            <div id="credential-manager" class="project-detailed">
+                <h3>Secure Credential Manager</h3>
+                <span class="project-date">October 2024 - Present</span>
+                
+                <div class="project-meta">
+                    <div class="meta-item">
+                        <i class="fas fa-code"></i>
+                        <span>Python, SQLite, Cryptography</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-key"></i>
+                        <span>Password Management</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-user-lock"></i>
+                        <span>Identity Protection</span>
+                    </div>
+                </div>
+                
+                <div class="project-section">
+                    <h4>Project Overview</h4>
+                    <p>A locally-hosted credential manager that securely stores and organizes passwords, API keys, and other sensitive credentials with strong encryption and zero cloud dependencies to maximize security and privacy.</p>
+                </div>
+                
+                <div class="project-section">
+                    <h4>Key Features</h4>
+                    <ul>
+                        <li>AES-256 encryption for all stored credentials</li>
+                        <li>Argon2 key derivation with customizable parameters</li>
+                        <li>Encrypted SQLite database for credential storage</li>
+                        <li>Automatic password generator with strength assessment</li>
+                        <li>Password health monitoring and breach checking</li>
+                        <li>Secure clipboard handling with automatic clearing</li>
+                        <li>TOTP two-factor authentication code generation</li>
+                    </ul>
+                </div>
+                
+                <div class="project-section">
+                    <h4>Technical Implementation</h4>
+                    <p>The application uses a master password with Argon2id key derivation to generate the encryption key. All sensitive data is encrypted using AES-256-GCM, which provides both confidentiality and authenticity. The database never stores plaintext credentials or the master key.</p>
+                    <p>For breach checking, the application implements k-anonymity to safely check passwords against known breaches without revealing the full password to external services.</p>
+                </div>
+                
+                <div class="project-links">
+                    <a href="#" class="project-link"><i class="fab fa-github"></i> View Repository</a>
+                    <a href="#" class="project-link"><i class="fas fa-download"></i> Download</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>© 2025 Jack Merritt</div>
+                <div>Cybersecurity & Network Administration</div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Smooth scrolling for fragment identifiers
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if there's a hash in the URL
+            if(window.location.hash) {
+                const targetId = window.location.hash.substring(1);
+                const targetElement = document.getElementById(targetId);
+                
+                if(targetElement) {
+                    // Wait a brief moment to ensure page is fully loaded
+                    setTimeout(function() {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }, 300);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
