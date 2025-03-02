@@ -3,104 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Me - Jack Merritt</title>
+    <title>Contact | Jack Merritt</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="icon" href="favicon.png" type="image/x-icon">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
 </head>
 <body>
-
-    <!-- Header -->
     <nav>
         <div class="container">
-            <a href="index.html" class="logo">
-                <img src="favicon.png" alt="Jack Merritt Logo" style="width: 50px; height: 50px; vertical-align: middle;">
-                Jack Merritt
-            </a>
+            <div class="logo">JM</div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
                 <li><a href="skills.html">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#education">Education</a></li>
                 <li><a href="contact.html" class="active">Contact</a></li>
             </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
         </div>
     </nav>
 
-    <!-- Main Content -->
-    <main class="contact-section">
-        <div class="container">
-            <h1>Contact Me</h1>
-            <p>Let's connect and collaborate!</p>
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Contact Me</h1>
+                <p>Let's connect and collaborate</p>
+            </div>
+        </section>
 
-            <div class="contact-info">
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-phone"></i>
+        <section class="contact-section">
+            <div class="container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Email</h3>
+                            <p><a href="mailto:Merritjw@mail.uc.edu">Merritjw@mail.uc.edu</a></p>
+                        </div>
                     </div>
-                    <div class="contact-text">
-                        <h3>Phone</h3>
-                        <p><a href="tel:+15551234567">555-123-4567</a></p>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Phone</h3>
+                            <p><a href="tel:4407966054">(440) 796-6054</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Location</h3>
+                            <p>Painesville, OH 44077</p>
+                        </div>
                     </div>
                 </div>
 
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <div class="contact-text">
-                        <h3>Email</h3>
-                        <p><a href="mailto:jack.merritt@example.com">jack.merritt@example.com</a></p>
+                <div class="social-profiles">
+                    <h2>Connect with Me</h2>
+                    <div class="social-grid">
+                        <a href="https://www.linkedin.com/in/jack-merritt42/" target="_blank" class="social-card linkedin">
+                            <div class="social-icon">
+                                <i class="fab fa-linkedin-in"></i>
+                            </div>
+                            <div class="social-name">LinkedIn</div>
+                        </a>
+                        <a href="https://github.com/" target="_blank" class="social-card github">
+                            <div class="social-icon">
+                                <i class="fab fa-github"></i>
+                            </div>
+                            <div class="social-name">GitHub</div>
+                        </a>
+                        <a href="https://leetcode.com/" target="_blank" class="social-card leetcode">
+                            <div class="social-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div class="social-name">LeetCode</div>
+                        </a>
                     </div>
                 </div>
 
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-map-marker-alt"></i>
-                    </div>
-                    <div class="contact-text">
-                        <h3>Location</h3>
-                        <p>Painesville, OH 44077</p>
-                    </div>
+                <div class="resume-section">
+                    <h2>Resume</h2>
+                    <p>View or download my resume for a complete overview of my education, skills, and experience.</p>
+                    <a href="#" class="btn primary-btn">View Resume</a>
                 </div>
             </div>
-
-            <div class="social-profiles">
-                <h2>Connect with me</h2>
-                <div class="social-grid">
-                    <a href="#" class="social-card linkedin">
-                        <i class="fab fa-linkedin social-icon"></i>
-                        <p>LinkedIn</p>
-                    </a>
-                    <a href="#" class="social-card github">
-                        <i class="fab fa-github social-icon"></i>
-                        <p>GitHub</p>
-                    </a>
-                    <a href="#" class="social-card leetcode">
-                        <i class="fa-brands fa-leetcode social-icon"></i>
-                        <p>LeetCode</p>
-                    </a>
-                </div>
-            </div>
-
-            <div class="resume-section">
-                <h2>Resume</h2>
-                <p>View or download my resume for a complete overview of my education, skills, and experience.</p>
-                <a href="#" class="btn btn-primary">View Resume</a>
-            </div>
-        </div>
+        </section>
     </main>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
-                <p class="footer-info">&copy; 2025 Jack Merritt</p>
+                <div class="footer-info">
+                    <p>© 2025 Jack Merritt</p>
+                </div>
                 <div class="social-links">
-                    <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="#" target="_blank"><i class="fa-brands fa-leetcode"></i></a>
+                    <a href="https://www.linkedin.com/in/jack-merritt42/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
                 </div>
             </div>
         </div>
