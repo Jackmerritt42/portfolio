@@ -16,7 +16,7 @@
                 <ul class="nav-links">
                     <li><a href="index.html#about">About</a></li>
                     <li><a href="index.html#skills">Skills</a></li>
-                    <li><a href="index.html#featured-projects">Projects</a></li>
+                    <li><a href="projects.html" class="active">Projects</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
@@ -261,105 +261,7 @@
                 </div>
                 
                 <div class="project-links">
-                    <a href="#" target="_blank" class="project-link"><i class="fab fa-github"></i> View Repository</a>
-                </div>
-            </div>
-            
-            <!-- Additional Projects can be added here -->
-            <div id="network-security-scanner" class="project-detailed">
-                <h3>Network Security Scanner</h3>
-                <span class="project-date">November 2024 - Present</span>
-                
-                <div class="project-meta">
-                    <div class="meta-item">
-                        <i class="fas fa-code"></i>
-                        <span>Python, Scapy</span>
-                    </div>
-                    <div class="meta-item">
-                        <i class="fas fa-network-wired"></i>
-                        <span>Network Security</span>
-                    </div>
-                    <div class="meta-item">
-                        <i class="fas fa-search"></i>
-                        <span>Vulnerability Assessment</span>
-                    </div>
-                </div>
-                
-                <div class="project-section">
-                    <h4>Project Overview</h4>
-                    <p>A comprehensive network security assessment tool that combines port scanning, vulnerability detection, and network mapping capabilities into a single interface. This tool helps identify potential security weaknesses in network infrastructure.</p>
-                </div>
-                
-                <div class="project-section">
-                    <h4>Key Features</h4>
-                    <ul>
-                        <li>Multi-threaded port scanning with customizable parameters</li>
-                        <li>OS fingerprinting and service detection</li>
-                        <li>Vulnerability detection based on service versions</li>
-                        <li>Network topology mapping</li>
-                        <li>Detailed reporting with mitigation recommendations</li>
-                        <li>Low-bandwidth mode for sensitive networks</li>
-                    </ul>
-                </div>
-                
-                <div class="project-section">
-                    <h4>Technical Implementation</h4>
-                    <p>Built in Python using Scapy for packet manipulation and network interactions. The scanner implements custom TCP/UDP scanning techniques including SYN stealth, FIN, XMAS, and NULL scans with timeout and retry mechanisms for accuracy.</p>
-                    <p>The vulnerability detection module cross-references detected service versions against a local database of known CVEs, updated regularly from public vulnerability databases.</p>
-                </div>
-                
-                <div class="project-links">
-                    <a href="#" class="project-link"><i class="fab fa-github"></i> View Repository</a>
-                    <a href="#" class="project-link"><i class="fas fa-file-alt"></i> Documentation</a>
-                </div>
-            </div>
-            
-            <div id="credential-manager" class="project-detailed">
-                <h3>Secure Credential Manager</h3>
-                <span class="project-date">October 2024 - Present</span>
-                
-                <div class="project-meta">
-                    <div class="meta-item">
-                        <i class="fas fa-code"></i>
-                        <span>Python, SQLite, Cryptography</span>
-                    </div>
-                    <div class="meta-item">
-                        <i class="fas fa-key"></i>
-                        <span>Password Management</span>
-                    </div>
-                    <div class="meta-item">
-                        <i class="fas fa-user-lock"></i>
-                        <span>Identity Protection</span>
-                    </div>
-                </div>
-                
-                <div class="project-section">
-                    <h4>Project Overview</h4>
-                    <p>A locally-hosted credential manager that securely stores and organizes passwords, API keys, and other sensitive credentials with strong encryption and zero cloud dependencies to maximize security and privacy.</p>
-                </div>
-                
-                <div class="project-section">
-                    <h4>Key Features</h4>
-                    <ul>
-                        <li>AES-256 encryption for all stored credentials</li>
-                        <li>Argon2 key derivation with customizable parameters</li>
-                        <li>Encrypted SQLite database for credential storage</li>
-                        <li>Automatic password generator with strength assessment</li>
-                        <li>Password health monitoring and breach checking</li>
-                        <li>Secure clipboard handling with automatic clearing</li>
-                        <li>TOTP two-factor authentication code generation</li>
-                    </ul>
-                </div>
-                
-                <div class="project-section">
-                    <h4>Technical Implementation</h4>
-                    <p>The application uses a master password with Argon2id key derivation to generate the encryption key. All sensitive data is encrypted using AES-256-GCM, which provides both confidentiality and authenticity. The database never stores plaintext credentials or the master key.</p>
-                    <p>For breach checking, the application implements k-anonymity to safely check passwords against known breaches without revealing the full password to external services.</p>
-                </div>
-                
-                <div class="project-links">
-                    <a href="#" class="project-link"><i class="fab fa-github"></i> View Repository</a>
-                    <a href="#" class="project-link"><i class="fas fa-download"></i> Download</a>
+                    <!-- Repository link removed as requested -->
                 </div>
             </div>
         </div>
@@ -369,7 +271,6 @@
         <div class="container">
             <div class="footer-content">
                 <div>© 2025 Jack Merritt</div>
-                <div>Cybersecurity & Network Administration</div>
             </div>
         </div>
     </footer>
