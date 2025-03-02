@@ -3,30 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jack Merritt | Cybersecurity Portfolio</title>
+    <title>Jack Merritt - Cybersecurity & Network Administration</title>
     <link rel="stylesheet" href="styles.css">
-	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="favicon.png" type="image/x-icon">
 </head>
 <body>
+
+    <!-- Header -->
     <nav>
         <div class="container">
+            <a href="index.html" class="logo">
+                <img src="favicon.png" alt="Jack Merritt Logo" style="width: 50px; height: 50px; vertical-align: middle;">
+                Jack Merritt
+            </a>
             <ul class="nav-links">
                 <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="projects.html">Projects</a></li>
                 <li><a href="skills.html">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
-            <div class="burger">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
-            </div>
         </div>
     </nav>
 
+    <!-- Main Content -->
     <main>
+        <!-- Hero Section -->
         <section class="hero">
             <div class="container">
                 <div class="hero-content">
@@ -34,68 +38,96 @@
                     <h2>Cybersecurity & Network Administration</h2>
                     <p>University of Cincinnati Student | Security Enthusiast | Developer</p>
                     <div class="cta-buttons">
-                        <a href="projects.html" class="btn primary-btn">View Projects</a>
-                        <a href="contact.html" class="btn secondary-btn">Contact Me</a>
+                        <a href="contact.html" class="btn btn-primary">Contact Me</a>
+                        <a href="#projects" class="btn">View Projects</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="about">
+        <!-- About Section -->
+        <section id="about" class="about">
             <div class="container">
                 <h2>About Me</h2>
                 <div class="about-content">
-                    <p>I'm a cybersecurity and network administration student at the University of Cincinnati with a passion for secure systems, innovative technologies, and all things encryption. </p>
-                    
+                    <p>I'm a cybersecurity and network administration student at the University of Cincinnati with a passion for secure systems, innovative technologies, and all things encryption.</p>
                     <p>My technical interests span across encryption systems, quantum-resistant algorithms, blockchain technology, and secure system development. All projects listed here are projects I am working on outside of the classroom to hone in my technical skills and also just because I enjoy working with these technologies!</p>
-                    
                     <p>When I'm not being a student, I love cooking, hiking, developing side projects, Watching sports, playing Rugby, and working out! I also love helping others with their fitness journeys; I have lost over 75 pounds, and love to inspire others to be the healthiest version of themselves!</p>
                 </div>
             </div>
         </section>
 
-        <section class="featured-projects">
+        <!-- Projects Section -->
+        <section id="projects" class="projects">
+            <div class="page-header">
+                <div class="container">
+                    <h2>Featured Projects</h2>
+                    <p>Check out some of my latest projects</p>
+                </div>
+            </div>
+
             <div class="container">
-                <h2>Featured Projects</h2>
                 <div class="projects-grid">
                     <div class="project-card">
                         <div class="project-content">
                             <h3>Encrypted Chat Application</h3>
                             <p>A secure, real-time messaging app using AES and RSA encryption for end-to-end privacy.</p>
-                            <a href="projects.html#encrypted-chat" class="read-more">Read More</a>
+                            <a href="#" class="read-more">Read More</a>
                         </div>
                     </div>
+
                     <div class="project-card">
                         <div class="project-content">
                             <h3>Quantum-Resistant Tool</h3>
                             <p>Python-based encryption with BB84 quantum key distribution protocol and IonQ simulation.</p>
-                            <a href="projects.html#quantum-resistant" class="read-more">Read More</a>
+                            <a href="#" class="read-more">Read More</a>
                         </div>
                     </div>
-					<div class="project-card">
-						<div class="project-content">
-							<h3>Shamir Secret Sharing</h3>
-							<p>Developed a cryptographic system in Python, implementing Shamir’s Secret Sharing and Distributed Key Generation.</p>
-							<a href="projects.html#shamir-secret-sharing" class="read-more">Read More</a>
-						</div>
-					</div>
+
+                    <div class="project-card">
+                        <div class="project-content">
+                            <h3>Shamir Secret Sharing</h3>
+                            <p>Developed a cryptographic system in Python, implementing Shamir’s Secret Sharing and Distributed Key Generation.</p>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </div>
                 </div>
+
                 <div class="view-all">
-                    <a href="projects.html" class="btn secondary-btn">View All Projects</a>
+                    <a href="#" class="btn btn-secondary">View All Projects</a>
+                </div>
+            </div>
+        </section>
+
+                <!-- Education Section -->
+        <section id="education" class="education-section">
+            <div class="container">
+                <h2>Education</h2>
+                <div class="education-card">
+                    <h3>University of Cincinnati</h3>
+                    <p class="degree">Bachelor of Science in Cybersecurity, Network/Systems Administration</p>
+                    <p class="education-date">Expected: May 2028</p>
+                    <p class="education-gpa">Cumulative GPA: 4.0</p>
+                    <div class="education-details">
+                        <h4>Relevant Coursework:</h4>
+                        <p>Information Security and Assurance, Database Management I & II, Cybersecurity Policy, Network Infrastructure Management, Human Computer Interaction, Computer Networking, System Administration, Computer Programming 1, Web Development, Applied Statistics, College Precalculus, Discrete Mathematics</p>
+                        <h4>Student Organizations:</h4>
+                        <p>Cyber@UC, UC-AI, UC Mountaineering</p>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-info">
-                    <p>© 2025 Jack Merritt</p>
-                </div>
+                <p class="footer-info">&copy; 2025 Jack Merritt</p>
                 <div class="social-links">
-                    <a href="https://www.linkedin.com/in/jack-merritt42/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/Jackmerritt42" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="#" target="_blank"><i class="fa-brands fa-leetcode"></i></a>
                 </div>
             </div>
         </div>
