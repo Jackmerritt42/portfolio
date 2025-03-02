@@ -19,6 +19,9 @@
                     <li><a href="projects.html">Projects</a></li>
                     <li><a href="contact.html" class="active">Contact</a></li>
                 </ul>
+                <button class="mobile-nav-toggle" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
             </nav>
         </div>
     </header>
@@ -32,38 +35,29 @@
     
     <section class="contact">
         <div class="container">
-            <div class="contact-grid">
-                <div class="contact-item">
+            <div class="contact-container">
+                <div class="contact-email">
                     <div class="contact-icon">
                         <i class="fas fa-envelope"></i>
                     </div>
-                    <div class="contact-text">
-                        <h3>Email</h3>
-                        <p><a href="mailto:Merritjw@mail.uc.edu">Merritjw@mail.uc.edu</a></p>
-                    </div>
+                    <h3 class="contact-title">Email Me</h3>
+                    <p class="contact-value">
+                        <a href="mailto:Merritjw@mail.uc.edu">Merritjw@mail.uc.edu</a>
+                    </p>
                 </div>
                 
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-map-marker-alt"></i>
-                    </div>
-                    <div class="contact-text">
-                        <h3>Location</h3>
-                        <p>Painesville, OH 44077</p>
-                    </div>
+                <h3 class="social-links-title">Connect With Me</h3>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/jack-merritt42/" target="_blank" class="social-link" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/Jackmerritt42" target="_blank" class="social-link" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://leetcode.com/u/Jack42m/" target="_blank" class="social-link" aria-label="LeetCode">
+                        <i class="fas fa-code"></i>
+                    </a>
                 </div>
-            </div>
-            
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/jack-merritt42/" target="_blank" class="social-link" aria-label="LinkedIn">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="https://github.com/Jackmerritt42" target="_blank" class="social-link" aria-label="GitHub">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="https://leetcode.com/u/Jack42m/" target="_blank" class="social-link" aria-label="LeetCode">
-                    <i class="fas fa-code"></i>
-                </a>
             </div>
         </div>
     </section>
@@ -75,5 +69,37 @@
             </div>
         </div>
     </footer>
+    
+    <script>
+        // Mobile Menu Toggle
+        const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileNavToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            
+            // Change icon based on menu state
+            const icon = mobileNavToggle.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+        
+        // Close mobile menu when clicking on a link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    const icon = mobileNavToggle.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+        });
+    </script>
 </body>
 </html>

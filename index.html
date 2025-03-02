@@ -19,6 +19,9 @@
                     <li><a href="projects.html">Projects</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
+                <button class="mobile-nav-toggle" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
             </nav>
         </div>
     </header>
@@ -43,7 +46,7 @@
                     <p>When I'm not being a student, I love cooking, hiking, developing side projects, watching sports, playing Rugby, and working out! I also love helping others with their fitness journeys; I have lost over 75 pounds, and love to inspire others to be the healthiest version of themselves!</p>
                     
                     <div class="education">
-                        <h3>Education</h3>
+                        <h3><i class="fas fa-graduation-cap"></i> Education</h3>
                         <h4>University of Cincinnati</h4>
                         <p>Bachelor of Science in Cybersecurity, Network/Systems Administration</p>
                         <p>Master of Science in Information Technology</p>
@@ -53,7 +56,7 @@
                 
                 <div class="skills-column" id="skills">
                     <div class="skill-category">
-                        <h3>Programming Languages</h3>
+                        <h3><i class="fas fa-code"></i> Programming Languages</h3>
                         <div class="skill-tags">
                             <span class="skill-tag">Java</span>
                             <span class="skill-tag">Python</span>
@@ -65,7 +68,7 @@
                     </div>
                     
                     <div class="skill-category">
-                        <h3>Cybersecurity Skills</h3>
+                        <h3><i class="fas fa-shield-alt"></i> Cybersecurity Skills</h3>
                         <div class="skill-tags">
                             <span class="skill-tag">Encryption</span>
                             <span class="skill-tag">Network Security</span>
@@ -76,7 +79,7 @@
                     </div>
                     
                     <div class="skill-category">
-                        <h3>Tools & Technologies</h3>
+                        <h3><i class="fas fa-tools"></i> Tools & Technologies</h3>
                         <div class="skill-tags">
                             <span class="skill-tag">Git</span>
                             <span class="skill-tag">Wireshark</span>
@@ -91,7 +94,7 @@
                     </div>
                     
                     <div class="skill-category">
-                        <h3>Operating Systems</h3>
+                        <h3><i class="fas fa-desktop"></i> Operating Systems</h3>
                         <div class="skill-tags">
                             <span class="skill-tag">Windows 11</span>
                             <span class="skill-tag">Windows Server</span>
@@ -200,6 +203,36 @@
     </footer>
     
     <script>
+        // Mobile Menu Toggle
+        const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileNavToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            
+            // Change icon based on menu state
+            const icon = mobileNavToggle.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+        
+        // Close mobile menu when clicking on a link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    const icon = mobileNavToggle.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+        });
+        
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
