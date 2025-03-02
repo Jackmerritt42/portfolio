@@ -10,6 +10,11 @@
     --shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
+html {
+    scroll-padding-top: 80px; 
+    scroll-behavior: smooth;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -59,56 +64,17 @@ section {
     padding: 5rem 0;
 }
 
-/* Button Styles */
-.btn {
-    display: inline-block;
-    padding: 0.8rem 1.5rem;
-    border-radius: 4px;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    transition: var(--transition);
-    cursor: pointer;
-    text-align: center;
-}
-
-.primary-btn {
-    background-color: var(--primary);
-    color: #121212;
-    border: 2px solid var(--primary);
-}
-
-.primary-btn:hover {
-    background-color: transparent;
-    color: var(--primary);
-}
-
-.secondary-btn {
-    background-color: transparent;
-    color: var(--primary);
-    border: 2px solid var(--primary);
-}
-
-.secondary-btn:hover {
-    background-color: var(--primary);
-    color: #121212;
-}
-
-/* Navigation */
+/* Header Styles */
 nav {
     position: fixed;
-    width: 100%;
     top: 0;
-    z-index: 1000;
-    background-color: rgba(18, 18, 18, 0.95);
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure the header stays above other content */
+    background-color: rgba(18, 18, 18, 0.95); /* Add a background color */
+    backdrop-filter: blur(10px); /* Optional: Adds a blur effect */
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2); /* Optional: Adds a shadow */
     padding: 1rem 0;
-    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(10px);
-}
-
-nav .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
 .logo {
@@ -170,6 +136,11 @@ nav .container {
     background-color: var(--text);
     margin: 5px;
     transition: var(--transition);
+}
+
+/* Main Content Padding */
+main {
+    padding-top: 80px; /* Adjust based on header height */
 }
 
 /* Hero Section */

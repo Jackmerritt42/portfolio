@@ -23,14 +23,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Form submission handler
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', function(event) {
             event.preventDefault();
             
-            // In a real implementation, you would send the form data to a server
-            // For now, just show a success message
+        
             alert('Thank you for your message! I will get back to you soon.');
             contactForm.reset();
         });
