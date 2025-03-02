@@ -23,40 +23,26 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Skill bar animation when in viewport
+    // Skill bar animation using IntersectionObserver
     const skillLevels = document.querySelectorAll('.skill-level');
     
-    // Function to check if element is in viewport
-    function isInViewport(element) {
-        const rect = element.getBoundingClientRect();
-        return (
-            rect.top >= 0 &&
-            rect.left >= 0 &&
-            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-        );
-    }
-    
-    // Function to animate skill bars
-    function animateSkillBars() {
-        skillLevels.forEach(skill => {
-            if (isInViewport(skill)) {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const skill = entry.target;
                 const width = skill.style.width;
                 skill.style.width = '0';
                 setTimeout(() => {
                     skill.style.width = width;
                 }, 200);
+                observer.unobserve(skill); // Stop observing after animation
             }
         });
-    }
-    
-    // Run animation when scrolling
-    window.addEventListener('scroll', () => {
-        animateSkillBars();
+    }, { threshold: 0.5 });
+
+    skillLevels.forEach(skill => {
+        observer.observe(skill);
     });
-    
-    // Run animation on page load
-    animateSkillBars();
     
     // Form submission handler
     const contactForm = document.getElementById('contactForm');
