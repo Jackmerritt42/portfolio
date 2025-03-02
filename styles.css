@@ -78,13 +78,17 @@ nav {
 }
 
 .logo {
-    font-size: 1.8rem;
-    font-weight: 700;
+    width: 100%; /* Make the logo span the full width */
+    text-align: center; /* Center the text */
+    font-size: 2rem; /* Adjust the font size as needed */
+    padding: 0.5rem 0; /* Add padding for spacing */
     color: var(--primary);
-    padding: 0.5rem;
+    font-weight: 700;
     border: 2px solid var(--primary);
     border-radius: 4px;
+    display: block; /* Ensure it behaves as a block element */
 }
+
 
 .nav-links {
     display: flex;
