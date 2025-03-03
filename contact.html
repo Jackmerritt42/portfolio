@@ -3,10 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Jack Merritt</title>
+    <title>Contact | Jack Merritt - Cybersecurity Portfolio</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Get in touch with Jack Merritt, cybersecurity and network administration specialist studying at the University of Cincinnati.">
+    <meta name="keywords" content="Jack Merritt, contact, cybersecurity, network administration, email, social media, LinkedIn, GitHub">
+    <meta name="author" content="Jack Merritt">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jackmerritt.com/contact.html">
+    <meta property="og:title" content="Contact Jack Merritt | Cybersecurity Expert">
+    <meta property="og:description" content="Connect with Jack Merritt, a cybersecurity specialist with expertise in encryption systems, quantum-resistant algorithms, and blockchain technology.">
+    <meta property="og:image" content="https://jackmerritt.com/images/contact-preview.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://jackmerritt.com/contact.html">
+    <meta property="twitter:title" content="Contact Jack Merritt | Cybersecurity Expert">
+    <meta property="twitter:description" content="Connect with Jack Merritt, a cybersecurity specialist with expertise in encryption systems, quantum-resistant algorithms, and blockchain technology.">
+    <meta property="twitter:image" content="https://jackmerritt.com/images/contact-preview.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://jackmerritt.com/contact.html">
+    
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -27,7 +52,7 @@
     </header>
     
     <section class="contact-hero">
-        <div class="container">
+        <div class="container" data-aos="fade-up" data-aos-duration="1000">
             <h1>Get In Touch</h1>
             <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
         </div>
@@ -36,7 +61,7 @@
     <section class="contact">
         <div class="container">
             <div class="contact-container">
-                <div class="contact-email">
+                <div class="contact-email" data-aos="fade-up" data-aos-delay="100">
                     <div class="contact-icon">
                         <i class="fas fa-envelope"></i>
                     </div>
@@ -46,8 +71,8 @@
                     </p>
                 </div>
                 
-                <h3 class="social-links-title">Connect With Me</h3>
-                <div class="social-links">
+                <h3 class="social-links-title" data-aos="fade-up" data-aos-delay="200">Connect With Me</h3>
+                <div class="social-links" data-aos="fade-up" data-aos-delay="300">
                     <a href="https://www.linkedin.com/in/jack-merritt42/" target="_blank" class="social-link" aria-label="LinkedIn">
                         <i class="fab fa-linkedin-in"></i>
                     </a>
@@ -70,7 +95,20 @@
         </div>
     </footer>
     
+    <button id="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        // Initialize AOS with faster durations on mobile
+        AOS.init({
+            once: true,
+            offset: 100,
+            duration: 600, // Faster animations
+            disable: window.innerWidth < 768 // Disable on mobile devices
+        });
+        
         // Mobile Menu Toggle
         const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
         const navLinks = document.querySelector('.nav-links');
@@ -100,6 +138,46 @@
                 }
             });
         });
+        
+        // Back to Top Button
+        window.addEventListener('scroll', function() {
+            const backToTopButton = document.getElementById('back-to-top');
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+        
+        document.getElementById('back-to-top').addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Structured data for SEO
+        const structuredData = {
+            "@context": "https://schema.org",
+            "@type": "ContactPage",
+            "name": "Contact Jack Merritt",
+            "description": "Get in touch with Jack Merritt, cybersecurity and network administration specialist.",
+            "mainEntity": {
+                "@type": "Person",
+                "name": "Jack Merritt",
+                "email": "Merritjw@mail.uc.edu",
+                "sameAs": [
+                    "https://www.linkedin.com/in/jack-merritt42/",
+                    "https://github.com/Jackmerritt42",
+                    "https://leetcode.com/u/Jack42m/"
+                ]
+            }
+        };
+        
+        const script = document.createElement('script');
+        script.type = 'application/ld+json';
+        script.text = JSON.stringify(structuredData);
+        document.head.appendChild(script);
     </script>
 </body>
 </html>
