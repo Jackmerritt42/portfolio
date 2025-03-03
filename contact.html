@@ -101,10 +101,12 @@
     
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Initialize AOS
+        // Initialize AOS with faster durations on mobile
         AOS.init({
             once: true,
-            offset: 200
+            offset: 100,
+            duration: 600, // Faster animations
+            disable: window.innerWidth < 768 // Disable on mobile devices
         });
         
         // Mobile Menu Toggle

@@ -287,7 +287,7 @@ nav {
 }
 
 .skill-category {
-    margin-bottom: 28px;
+    margin-bottom: 32px;
 }
 
 .skill-category h3 {
@@ -307,65 +307,73 @@ nav {
 .skill-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 16px;
-}
-
-.skill-item {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    margin-bottom: 5px;
-    width: 100%;
+    gap: 10px;
+    margin-top: 5px;
 }
 
 .skill-tag {
     background: rgba(6, 182, 212, 0.1);
     color: var(--text-color);
-    font-size: 0.85rem;
-    padding: 8px 14px;
-    border-radius: 6px;
+    font-size: 0.9rem;
+    padding: 8px 16px;
+    border-radius: 30px;
     font-weight: 500;
     border: 1px solid rgba(6, 182, 212, 0.2);
     transition: all 0.3s ease;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-tag::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.4s ease; /* Faster transition */
+}
+
+.skill-tag:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(6, 182, 212, 0.2);
+    background: rgba(6, 182, 212, 0.15);
+}
+
+.skill-tag:hover::before {
+    transform: translateX(100%);
 }
 
 .skill-level {
-    height: 5px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    overflow: hidden;
-    position: relative;
+    display: inline-flex;
+    margin-left: 4px;
 }
 
-.skill-progress {
-    height: 100%;
-    border-radius: 10px;
-    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
-    position: relative;
+.skill-level.expert .skill-dot {
+    background-color: var(--primary-color);
 }
 
-.skill-tooltip {
-    position: absolute;
-    top: -25px;
-    right: 0;
-    background-color: var(--card-bg);
-    color: var(--text-color);
-    padding: 3px 8px;
-    border-radius: 4px;
-    font-size: 0.75rem;
-    font-weight: 500;
-    opacity: 0;
-    transform: translateY(5px);
-    transition: all 0.2s ease;
-    pointer-events: none;
-    white-space: nowrap;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+.skill-level.advanced .skill-dot {
+    background-color: var(--accent-color);
 }
 
-.skill-progress:hover .skill-tooltip {
-    opacity: 1;
-    transform: translateY(0);
+.skill-level.intermediate .skill-dot {
+    background-color: var(--secondary-color);
+}
+
+.skill-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    margin-left: 2px;
+    display: inline-block;
+    box-shadow: 0 0 5px rgba(6, 182, 212, 0.5);
 }
 
 .education {
@@ -872,31 +880,13 @@ nav {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: white;
     border-radius: 50%;
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease;
     font-size: 1.2rem;
     box-shadow: 0 4px 15px rgba(6, 182, 212, 0.2);
-    position: relative;
-    overflow: hidden;
-}
-
-.social-link::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transition: all 0.5s ease;
 }
 
 .social-link:hover {
-    transform: translateY(-5px) rotate(10deg);
-    box-shadow: 0 8px 20px rgba(6, 182, 212, 0.3);
-}
-
-.social-link:hover::before {
-    left: 100%;
+    transform: translateY(-5px);
 }
 
 /* Footer */
@@ -980,9 +970,10 @@ footer::before {
     }
 }
 
+/* Mobile optimizations */
 @media (max-width: 768px) {
     .hero {
-        padding: 80px 0 60px;
+        padding: 60px 0 40px;
     }
     
     .hero h1 {
@@ -994,23 +985,23 @@ footer::before {
     }
     
     .about, .projects, .all-projects, .contact {
-        padding: 60px 0;
+        padding: 50px 0;
     }
     
     .projects-hero, .contact-hero {
-        padding: 60px 0 40px;
+        padding: 50px 0 30px;
     }
     
     .projects-hero h1, .contact-hero h1 {
-        font-size: 2.4rem;
+        font-size: 2.2rem;
     }
     
     .project-detailed {
-        padding: 30px;
+        padding: 25px;
     }
     
     .project-detailed h3 {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
     }
     
     .mobile-nav-toggle {
@@ -1047,11 +1038,36 @@ footer::before {
         width: 45px;
         height: 45px;
     }
+    
+    /* Make skills more compact */
+    .skills-column {
+        padding: 20px;
+    }
+    
+    .skill-category {
+        margin-bottom: 24px;
+    }
+    
+    .skill-tags {
+        gap: 8px;
+    }
+    
+    .skill-tag {
+        padding: 6px 12px;
+        font-size: 0.85rem;
+    }
+    
+    /* Container padding fix for mobile */
+    .container {
+        padding: 0 20px;
+    }
 }
 
 @media (max-width: 576px) {
     .container {
-        padding: 0 16px;
+        padding: 0 20px;
+        width: 100%;
+        max-width: 100%;
     }
     
     .hero h1 {
@@ -1076,11 +1092,36 @@ footer::before {
     }
     
     .project-detailed {
-        padding: 24px;
+        padding: 20px;
     }
     
+    /* Skills spacing fix for mobile */
     .skill-tags {
-        gap: 12px;
+        gap: 8px;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+    
+    .skill-tag {
+        margin-bottom: 5px;
+        font-size: 0.8rem;
+        padding: 5px 10px;
+    }
+    
+    .skills-column {
+        margin: 0;
+        width: 100%;
+        padding: 15px;
+    }
+    
+    .about-content {
+        gap: 30px;
+    }
+    
+    /* Fix for the education box on mobile */
+    .education {
+        margin: 30px 0 0;
+        padding: 20px;
     }
 }
 
