@@ -3,35 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects | Jack Merritt - Cybersecurity Portfolio</title>
-    
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Explore Jack Merritt's cybersecurity projects including encrypted chat applications, quantum-resistant tools, and blockchain-based systems.">
-    <meta name="keywords" content="Jack Merritt, cybersecurity projects, encryption, quantum-resistant, blockchain, security projects, programming portfolio">
-    <meta name="author" content="Jack Merritt">
-    <meta name="robots" content="index, follow">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://jackmerritt.com/projects.html">
-    <meta property="og:title" content="Projects | Jack Merritt - Cybersecurity Expert">
-    <meta property="og:description" content="Explore innovative cybersecurity projects by Jack Merritt, including encrypted chat applications, quantum-resistant tools, and blockchain-based systems.">
-    <meta property="og:image" content="https://jackmerritt.com/images/projects-preview.jpg">
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://jackmerritt.com/projects.html">
-    <meta property="twitter:title" content="Projects | Jack Merritt - Cybersecurity Expert">
-    <meta property="twitter:description" content="Explore innovative cybersecurity projects by Jack Merritt, including encrypted chat applications, quantum-resistant tools, and blockchain-based systems.">
-    <meta property="twitter:image" content="https://jackmerritt.com/images/projects-preview.jpg">
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://jackmerritt.com/projects.html">
-    
+    <title>Projects | Jack Merritt</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -52,7 +27,7 @@
     </header>
     
     <section class="projects-hero">
-        <div class="container" data-aos="fade-up" data-aos-duration="1000">
+        <div class="container">
             <h1>My Projects</h1>
             <p>A collection of my cybersecurity and development work</p>
         </div>
@@ -60,12 +35,12 @@
     
     <section class="all-projects">
         <div class="container">
-            <div class="section-header" data-aos="fade-up">
+            <div class="section-header">
                 <h2>Project Portfolio</h2>
             </div>
             
             <!-- Encrypted Chat Application (Detailed) -->
-            <div id="encrypted-chat" class="project-detailed" data-aos="fade-up" data-aos-delay="100">
+            <div id="encrypted-chat" class="project-detailed">
                 <h3>Encrypted Chat Application</h3>
                 <span class="project-date">January 2025 - Present</span>
                 
@@ -120,7 +95,7 @@
             </div>
             
             <!-- Quantum-Resistant Tool (Detailed) -->
-            <div id="quantum-resistant" class="project-detailed" data-aos="fade-up" data-aos-delay="100">
+            <div id="quantum-resistant" class="project-detailed">
                 <h3>Quantum-Resistant Encryption Tool</h3>
                 <span class="project-date">December 2024 - Present</span>
                 
@@ -174,7 +149,7 @@
             </div>
             
             <!-- Shamir Secret Sharing (Detailed) -->
-            <div id="shamir-secret" class="project-detailed" data-aos="fade-up" data-aos-delay="100">
+            <div id="shamir-secret" class="project-detailed">
                 <h3>Shamir Secret Sharing & Distributed Key Generation</h3>
                 <span class="project-date">February 2025 - Present</span>
                 
@@ -234,7 +209,7 @@
             </div>
             
             <!-- Blockchain Voting System (Detailed) -->
-            <div id="blockchain-voting" class="project-detailed" data-aos="fade-up" data-aos-delay="100">
+            <div id="blockchain-voting" class="project-detailed">
                 <h3>Blockchain-Based Voting System</h3>
                 <span class="project-date">September 2024 - Present</span>
                 
@@ -303,20 +278,7 @@
         </div>
     </footer>
     
-    <button id="back-to-top" aria-label="Back to top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-    
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Initialize AOS with faster durations on mobile
-        AOS.init({
-            once: true,
-            offset: 100,
-            duration: 600, // Faster animations
-            disable: window.innerWidth < 768 // Disable on mobile devices
-        });
-        
         // Mobile Menu Toggle
         const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
         const navLinks = document.querySelector('.nav-links');
@@ -358,87 +320,13 @@
                     // Wait a brief moment to ensure page is fully loaded
                     setTimeout(function() {
                         window.scrollTo({
-                            top: targetElement.offsetTop - 100,
+                            top: targetElement.offsetTop - 80,
                             behavior: 'smooth'
                         });
                     }, 300);
                 }
             }
         });
-        
-        // Back to Top Button
-        window.addEventListener('scroll', function() {
-            const backToTopButton = document.getElementById('back-to-top');
-            if (window.pageYOffset > 300) {
-                backToTopButton.classList.add('show');
-            } else {
-                backToTopButton.classList.remove('show');
-            }
-        });
-        
-        document.getElementById('back-to-top').addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-        
-        // Structured data for SEO
-        const structuredData = {
-            "@context": "https://schema.org",
-            "@type": "ItemList",
-            "itemListElement": [
-                {
-                    "@type": "SoftwareApplication",
-                    "position": 1,
-                    "name": "Encrypted Chat Application",
-                    "applicationCategory": "SecurityApplication",
-                    "operatingSystem": "Cross-platform",
-                    "author": {
-                        "@type": "Person",
-                        "name": "Jack Merritt"
-                    }
-                },
-                {
-                    "@type": "SoftwareApplication",
-                    "position": 2,
-                    "name": "Quantum-Resistant Encryption Tool",
-                    "applicationCategory": "SecurityApplication",
-                    "operatingSystem": "Cross-platform",
-                    "author": {
-                        "@type": "Person",
-                        "name": "Jack Merritt"
-                    }
-                },
-                {
-                    "@type": "SoftwareApplication",
-                    "position": 3,
-                    "name": "Shamir Secret Sharing & DKG",
-                    "applicationCategory": "SecurityApplication",
-                    "operatingSystem": "Cross-platform",
-                    "author": {
-                        "@type": "Person",
-                        "name": "Jack Merritt"
-                    }
-                },
-                {
-                    "@type": "SoftwareApplication",
-                    "position": 4,
-                    "name": "Blockchain-Based Voting System",
-                    "applicationCategory": "SecurityApplication",
-                    "operatingSystem": "Cross-platform",
-                    "author": {
-                        "@type": "Person",
-                        "name": "Jack Merritt"
-                    }
-                }
-            ]
-        };
-        
-        const script = document.createElement('script');
-        script.type = 'application/ld+json';
-        script.text = JSON.stringify(structuredData);
-        document.head.appendChild(script);
     </script>
 </body>
 </html>
