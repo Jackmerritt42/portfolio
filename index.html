@@ -378,146 +378,105 @@
     
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Initialize AOS with faster durations on mobile
-        AOS.init({
-            once: true,
-            offset: 100,
-            duration: 600, // Faster animations
-            disable: window.innerWidth < 768 // Disable on mobile devices
-        });
-        
-        // Mobile Menu Toggle
-        const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
-        const navLinks = document.querySelector('.nav-links');
-        
-        mobileNavToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
+        // Execute when DOM is fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Fix for navigation links on both root domain and index.html
+    const navLinks = document.querySelectorAll('.nav-links a');
+    
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
             
-            // Change icon based on menu state
-            const icon = mobileNavToggle.querySelector('i');
-            if (navLinks.classList.contains('active')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-            } else {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
+            // Only intercept in-page links (starting with #)
+            if (href.startsWith('#')) {
+                e.preventDefault();
+                
+                // Get the target element
+                const targetElement = document.querySelector(href);
+                
+                if (targetElement) {
+                    // Get the element's position relative to the viewport
+                    const rect = targetElement.getBoundingClientRect();
+                    
+                    // Calculate the absolute position and adjust for header
+                    const scrollPosition = rect.top + window.pageYOffset - 100;
+                    
+                    // Scroll to the target
+                    window.scrollTo({
+                        top: scrollPosition,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Update active state
+                    navLinks.forEach(nav => nav.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Update URL without page reload - helps with browser history
+                    history.pushState(null, null, href);
+                }
+            }
+        });
+    });
+    
+    // Handle scroll events to update active navigation state
+    window.addEventListener('scroll', function() {
+        const scrollPosition = window.scrollY;
+        
+        // Get all relevant sections
+        const sections = [
+            document.getElementById('about'),
+            document.getElementById('skills'),
+            document.getElementById('featured-projects')
+        ].filter(Boolean); // Filter out any null sections
+        
+        // Calculate visibility thresholds for each section
+        const visibleSection = sections.find((section, index) => {
+            // For regular sections
+            if (section.id !== 'skills') {
+                const sectionTop = section.offsetTop - 150;
+                const sectionBottom = sectionTop + section.offsetHeight;
+                return scrollPosition >= sectionTop && scrollPosition < sectionBottom;
+            } 
+            // Special case for skills section
+            else {
+                const skillsTop = section.offsetTop - 200;
+                const skillsBottom = skillsTop + section.offsetHeight + 200;
+                return scrollPosition >= skillsTop && scrollPosition < skillsBottom;
             }
         });
         
-        // Close mobile menu when clicking on a link
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                if (navLinks.classList.contains('active')) {
-                    navLinks.classList.remove('active');
-                    const icon = mobileNavToggle.querySelector('i');
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
+        // Update active navigation link
+        if (visibleSection) {
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${visibleSection.id}`) {
+                    link.classList.add('active');
                 }
             });
-        });
-        
-// Smooth scrolling for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        
-        const href = this.getAttribute('href');
-        const target = document.querySelector(href);
-        
-        if (target) {
-            // Calculate proper offset
-            const scrollPosition = target.offsetTop - 100;
-            
-            window.scrollTo({
-                top: scrollPosition,
-                behavior: 'smooth'
-            });
-            
-            // Update active link
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                link.classList.remove('active');
-            });
-            this.classList.add('active');
         }
-    });
-});
-
-// Handle active nav link on scroll
-window.addEventListener('scroll', function() {
-    const sections = document.querySelectorAll('section');
-    const skills = document.getElementById('skills');
-    let current = '';
-    
-    // First check regular sections
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop - 200;
-        const sectionHeight = section.clientHeight;
         
-        if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
-            current = section.getAttribute('id');
+        // Back to Top Button visibility
+        const backToTopButton = document.getElementById('back-to-top');
+        if (backToTopButton) {
+            if (scrollPosition > 300) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
         }
     });
     
-    // Special check for skills section since it's nested
-    if (skills) {
-        const skillsTop = skills.offsetTop - 250;
-        const skillsHeight = skills.clientHeight;
-        const aboutSection = document.getElementById('about');
-        
-        if (pageYOffset >= skillsTop && pageYOffset < skillsTop + skillsHeight + 100) {
-            current = 'skills';
-        } else if (current === 'about' && pageYOffset < skillsTop) {
-            current = 'about';
-        }
-    }
-    
-    // Update active links
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-            link.classList.add('active');
-        }
-    });
-    
-    // Back to Top Button
+    // Fix for Back to Top button
     const backToTopButton = document.getElementById('back-to-top');
-    if (window.pageYOffset > 300) {
-        backToTopButton.classList.add('show');
-    } else {
-        backToTopButton.classList.remove('show');
-    }
-});
-        
-        // Back to Top Button functionality
-        document.getElementById('back-to-top').addEventListener('click', () => {
+    if (backToTopButton) {
+        backToTopButton.addEventListener('click', function() {
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
             });
         });
-        
-        // Structured data for SEO
-        const structuredData = {
-            "@context": "https://schema.org",
-            "@type": "Person",
-            "name": "Jack Merritt",
-            "url": "https://jackmerritt.com",
-            "jobTitle": "Cybersecurity Specialist",
-            "worksFor": {
-                "@type": "Organization",
-                "name": "University of Cincinnati"
-            },
-            "alumniOf": {
-                "@type": "Organization",
-                "name": "University of Cincinnati"
-            },
-            "knowsAbout": ["Cybersecurity", "Network Administration", "Encryption", "Blockchain", "Quantum Computing"]
-        };
-        
-        const script = document.createElement('script');
-        script.type = 'application/ld+json';
-        script.text = JSON.stringify(structuredData);
-        document.head.appendChild(script);
+    }
+});
     </script>
 </body>
 </html>
