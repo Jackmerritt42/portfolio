@@ -1158,3 +1158,60 @@ footer::before {
     opacity: 1;
     transform: translateX(0);
 }
+
+/* Navigation social media links */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.nav-social-links {
+    display: flex;
+    gap: 10px;
+}
+
+.nav-social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    color: var(--text-color);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+}
+
+.nav-social-link:hover {
+    color: var(--primary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(6, 182, 212, 0.2);
+}
+
+/* Responsive adjustments for navigation social links */
+@media (max-width: 768px) {
+    .logo-container {
+        gap: 10px;
+    }
+    
+    .nav-social-links {
+        gap: 8px;
+    }
+    
+    .nav-social-link {
+        width: 28px;
+        height: 28px;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .nav-social-link {
+        width: 24px;
+        height: 24px;
+        font-size: 0.75rem;
+    }
+}
