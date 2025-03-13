@@ -246,7 +246,70 @@
                     <a href="https://github.com/Jackmerritt42/ShamirSecretSharingDKG" target="_blank" class="project-link"><i class="fab fa-github"></i> View Repository</a>
                 </div>
             </div>
-            
+            <div id="wifi-security" class="project-detailed" data-aos="fade-up" data-aos-delay="100">
+    <h3>Wi-Fi Security Assessment Tool</h3>
+    <span class="project-date">March 2025 - Present</span>
+    
+    <div class="project-meta">
+        <div class="meta-item">
+            <i class="fas fa-code"></i>
+            <span>Python, Network Analysis</span>
+        </div>
+        <div class="meta-item">
+            <i class="fas fa-shield-alt"></i>
+            <span>Network Security</span>
+        </div>
+        <div class="meta-item">
+            <i class="fas fa-microchip"></i>
+            <span>Raspberry Pi, Windows, Linux</span>
+        </div>
+    </div>
+    
+    <div class="project-section">
+        <h4>Project Overview</h4>
+        <p>A portable, multi-platform tool designed to scan and analyze the security of nearby Wi-Fi networks. This tool performs comprehensive security assessments, identifies vulnerabilities in network configurations, and provides actionable recommendations for improving security posture.</p>
+    </div>
+    
+    <div class="project-section">
+        <h4>Key Features</h4>
+        <ul>
+            <li>Cross-platform support for Windows, Linux, and Raspberry Pi systems</li>
+            <li>Detailed Wi-Fi scanning capabilities to detect SSIDs, encryption types, signal strength, and MAC addresses</li>
+            <li>Security risk assessment with vulnerability identification</li>
+            <li>Enhanced scanning capabilities using monitor mode on Linux/Raspberry Pi</li>
+            <li>Support for continuous scanning at specified intervals</li>
+            <li>Detailed reporting in both TXT and JSON formats with risk-based color coding</li>
+            <li>Customizable scanning parameters and reporting options</li>
+        </ul>
+    </div>
+    
+    <div class="project-section">
+        <h4>Technical Implementation</h4>
+        <p>This project leverages platform-specific network scanning techniques, using the netsh command on Windows and iwlist/iw on Linux. For enhanced monitoring capabilities, the tool integrates with advanced wireless tools including aircrack-ng to enable monitor mode scanning on compatible hardware.</p>
+        <p>The codebase is structured modularly with a core scanner module that handles the platform detection and implements the appropriate scanning technique. The main interface provides a CLI with various options for customizing the scan behavior and output format.</p>
+    </div>
+    
+    <div class="project-section">
+        <h4>Security Analysis</h4>
+        <p>The tool evaluates network security based on encryption protocols, identifying networks using outdated or weak security mechanisms. It assigns risk levels ranging from "VERY LOW" (highly secure) to "HIGH" (significant vulnerabilities) and highlights specific security issues including:</p>
+        <ul>
+            <li>Open networks with no encryption</li>
+            <li>WEP encryption (easily broken)</li>
+            <li>Outdated WPA encryption</li>
+            <li>WPA2 with TKIP instead of AES/CCMP</li>
+            <li>Enabled WPS vulnerable to brute-force attacks</li>
+        </ul>
+    </div>
+    
+    <div class="project-section">
+        <h4>Portable Deployment</h4>
+        <p>A key aspect of this project is its portability, particularly when deployed on a Raspberry Pi. The system can be configured to run automatically at boot as a systemd service, conducting regular scans and generating reports for later analysis. This creates a portable security assessment platform that can be easily transported to different locations for field testing.</p>
+    </div>
+    
+    <div class="project-links">
+        <a href="https://github.com/Jackmerritt42/WiFiSecurityTool" target="_blank" class="project-link"><i class="fab fa-github"></i> View Repository</a>
+    </div>
+</div>
             <!-- Blockchain Voting System (Detailed) -->
             <div id="blockchain-voting" class="project-detailed" data-aos="fade-up" data-aos-delay="100">
                 <h3>Blockchain-Based Voting System</h3>
